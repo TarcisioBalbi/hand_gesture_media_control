@@ -18,15 +18,18 @@ keyboard = Controller()
 cap = cv2.VideoCapture(0)
 handPoseIdentifier = hpid.handPoseId()
 
+#For a command to be valid, this flag must be on
 commandFlag = 0
 
 while True:
     propList = []
     sucess,img = cap.read()
-    
+    #Checks the currente pose and controls the PC media depending on the pose.
     img,pose = handPoseIdentifier.getHandPose(img)
     print(pose)
     
+    #The 'hangloose' gesture triggers the command flag
+    # After the 'hangloose', a command can be given
     if pose =='hangloose':
         commandFlag =1
         
