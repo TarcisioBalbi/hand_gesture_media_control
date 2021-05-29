@@ -11,6 +11,10 @@ import numpy as np
 
 class handPoseId():
     def __init__(self):
+        # These are the known proportions of the distances from the wrist to each fingertip compared to each other
+        # In each hand configuration, the proportion between the distances stay almost the same.
+        # So we can compare the proportions read from the image with these known ones e calculate how similar they are
+        
         self.knownProportions = {'1':[[1.,         2.12251269, 0.51181184, 0.43272611, 0.63624563],
                           [0.4711397,  1.,         0.24113488, 0.20387445, 0.29976058],
                           [1.95384305, 4.14705666, 1.,         0.8454789,  1.2431241 ],
@@ -78,7 +82,7 @@ class handPoseId():
         
         
     
-
+#simples euclidian distance calculator
 def distanceCalculador(p1,p2):
     squaresSum = 0
 
@@ -88,6 +92,7 @@ def distanceCalculador(p1,p2):
                              
     return np.sqrt(squaresSum)
 
+#Calculates the proportions between the distances of each fingertip to the wrist
 def proportionCalculator(points):
     proportions = []
     
@@ -97,7 +102,8 @@ def proportionCalculator(points):
         proportions.append(props)
     
     return proportions
-
+#Compares the proportions of the current read image with the known ones, the smallest distance 
+# is considered the correct pose
 def poseDetection(proportionList,positionDict):
     
     poses = [key for key in positionDict.keys()]
