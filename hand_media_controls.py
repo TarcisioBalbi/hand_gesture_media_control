@@ -76,7 +76,7 @@ while True:
         commandFlag = 0
         
         
-    #cv2.imshow('Image', img)
+    # # cv2.imshow('Image', img)
     cv2.imshow('Esc or Enter to close', np.zeros((200,200)))
     key = cv2.waitKey(1)
     if key == 27 or key == 10: ## ESC or ENTER to break

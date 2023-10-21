@@ -3,7 +3,7 @@
 Created on Fri May 28 15:53:27 2021
 
 @author: Tarcisio Balbi
-This parte is based on Chapter one of the course: Advanced Computer Vision with Python 
+This part is based on Chapter one of the course: Advanced Computer Vision with Python 
 Available at: https://www.youtube.com/watch?v=01sAkU_NvOY&list=WL&ab_channel=freeCodeCamp.org
 """
 
