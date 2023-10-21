@@ -12,7 +12,7 @@ import mediapipe as mp
 
 
 class handDetector():
-    def __init__(self, mode = False, maxHands = 2, detectionConf=0.5, trackConf = 0.5):
+    def __init__(self, mode = False, maxHands = 2, detectionConf=0, trackConf = 0):
         self.mode = mode
         self.maxHands = maxHands
         self.detectionConf = detectionConf

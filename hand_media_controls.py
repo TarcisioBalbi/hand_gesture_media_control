@@ -25,9 +25,9 @@ commandFlag = 0
 # 3 = Volume down
 # 4 = Next track
 while True:
-    propList = []
+    # propList = []
     sucess,img = cap.read()
-    
+
     img,pose = handPoseIdentifier.getHandPose(img)
     
     
@@ -76,7 +76,7 @@ while True:
         commandFlag = 0
         
         
-    # # cv2.imshow('Image', img)
+    # cv2.imshow('Image', img)
     cv2.imshow('Esc or Enter to close', np.zeros((200,200)))
     key = cv2.waitKey(1)
     if key == 27 or key == 10: ## ESC or ENTER to break
@@ -84,4 +84,3 @@ while True:
 
 cv2.destroyAllWindows()
 cap.release() 
-
